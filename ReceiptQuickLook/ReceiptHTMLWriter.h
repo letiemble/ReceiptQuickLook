@@ -15,3 +15,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
+#import "HTMLWriter.h"
+
+/**
+ * @brief A HTMLWriter subclass to output a receipt in HTML.
+ */
+@interface ReceiptHTMLWriter : HTMLWriter
+
+@end

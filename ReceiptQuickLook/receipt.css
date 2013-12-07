@@ -1,4 +1,4 @@
-//
+/*
 // Receipt QuickLook Plugin.
 // Copyright (c) 2013 Laurent Etiemble.
 //
@@ -14,4 +14,32 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
+*/
+body {
+    font-family: Arial;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 2;
+}
+
+td {
+    vertical-align: top;
+    padding: 0.25em;
+}
+
+td.label {
+    text-align: right;
+    background-color: #eee;
+}
+
+td.value {
+    font-weight: bold;
+}
+
+td.item {
+    text-align: center;
+    font-weight: bold;
+    background-color: #ddd;
+}

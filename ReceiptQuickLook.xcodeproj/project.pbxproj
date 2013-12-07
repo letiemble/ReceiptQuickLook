@@ -12,9 +12,19 @@
 		4D3B059C183166CD005DB9B1 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3B059B183166CD005DB9B1 /* CoreServices.framework */; };
 		4D3B059E183166CD005DB9B1 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3B059D183166CD005DB9B1 /* CoreFoundation.framework */; };
 		4D3B05A4183166CD005DB9B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B05A2183166CD005DB9B1 /* InfoPlist.strings */; };
-		4D3B05A6183166CD005DB9B1 /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05A5183166CD005DB9B1 /* GenerateThumbnailForURL.c */; };
-		4D3B05A8183166CD005DB9B1 /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05A7183166CD005DB9B1 /* GeneratePreviewForURL.c */; };
+		4D3B05A6183166CD005DB9B1 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05A5183166CD005DB9B1 /* GenerateThumbnailForURL.m */; };
+		4D3B05A8183166CD005DB9B1 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05A7183166CD005DB9B1 /* GeneratePreviewForURL.m */; };
 		4D3B05AA183166CD005DB9B1 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05A9183166CD005DB9B1 /* main.c */; };
+		4D3B05B61831FEF2005DB9B1 /* receipt.css in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B05B51831FEF2005DB9B1 /* receipt.css */; };
+		4D3B05B918340F55005DB9B1 /* Receipt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D3B05B718340F55005DB9B1 /* Receipt.h */; };
+		4D3B05BA18340F55005DB9B1 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05B818340F55005DB9B1 /* Receipt.m */; };
+		4D3B05BD183503F3005DB9B1 /* HTMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D3B05BB183503F3005DB9B1 /* HTMLWriter.h */; };
+		4D3B05BE183503F3005DB9B1 /* HTMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B05BC183503F3005DB9B1 /* HTMLWriter.m */; };
+		4DC694D81837E8E90042EE22 /* ByteArrayTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DC694D61837E8E90042EE22 /* ByteArrayTransformer.h */; };
+		4DC694D91837E8E90042EE22 /* ByteArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC694D71837E8E90042EE22 /* ByteArrayTransformer.m */; };
+		4DE576D2185366060028650C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DE576D4185366060028650C /* Localizable.strings */; };
+		4DE576D7185391830028650C /* ReceiptHTMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE576D5185391830028650C /* ReceiptHTMLWriter.h */; };
+		4DE576D8185391830028650C /* ReceiptHTMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE576D6185391830028650C /* ReceiptHTMLWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +35,20 @@
 		4D3B059D183166CD005DB9B1 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4D3B05A1183166CD005DB9B1 /* ReceiptQuickLook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReceiptQuickLook-Info.plist"; sourceTree = "<group>"; };
 		4D3B05A3183166CD005DB9B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4D3B05A5183166CD005DB9B1 /* GenerateThumbnailForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GenerateThumbnailForURL.c; sourceTree = "<group>"; };
-		4D3B05A7183166CD005DB9B1 /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
+		4D3B05A5183166CD005DB9B1 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
+		4D3B05A7183166CD005DB9B1 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		4D3B05A9183166CD005DB9B1 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4D3B05AB183166CD005DB9B1 /* ReceiptQuickLook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReceiptQuickLook-Prefix.pch"; sourceTree = "<group>"; };
+		4D3B05B51831FEF2005DB9B1 /* receipt.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = receipt.css; sourceTree = "<group>"; };
+		4D3B05B718340F55005DB9B1 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		4D3B05B818340F55005DB9B1 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
+		4D3B05BB183503F3005DB9B1 /* HTMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLWriter.h; sourceTree = "<group>"; };
+		4D3B05BC183503F3005DB9B1 /* HTMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLWriter.m; sourceTree = "<group>"; };
+		4DC694D61837E8E90042EE22 /* ByteArrayTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteArrayTransformer.h; sourceTree = "<group>"; };
+		4DC694D71837E8E90042EE22 /* ByteArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByteArrayTransformer.m; sourceTree = "<group>"; };
+		4DE576D3185366060028650C /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4DE576D5185391830028650C /* ReceiptHTMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptHTMLWriter.h; sourceTree = "<group>"; };
+		4DE576D6185391830028650C /* ReceiptHTMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptHTMLWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +97,20 @@
 		4D3B059F183166CD005DB9B1 /* ReceiptQuickLook */ = {
 			isa = PBXGroup;
 			children = (
-				4D3B05A5183166CD005DB9B1 /* GenerateThumbnailForURL.c */,
-				4D3B05A7183166CD005DB9B1 /* GeneratePreviewForURL.c */,
+				4DC694D61837E8E90042EE22 /* ByteArrayTransformer.h */,
+				4DC694D71837E8E90042EE22 /* ByteArrayTransformer.m */,
+				4D3B05A5183166CD005DB9B1 /* GenerateThumbnailForURL.m */,
+				4D3B05A7183166CD005DB9B1 /* GeneratePreviewForURL.m */,
+				4D3B05BB183503F3005DB9B1 /* HTMLWriter.h */,
+				4D3B05BC183503F3005DB9B1 /* HTMLWriter.m */,
+				4D3B05B718340F55005DB9B1 /* Receipt.h */,
+				4D3B05B818340F55005DB9B1 /* Receipt.m */,
+				4DE576D5185391830028650C /* ReceiptHTMLWriter.h */,
+				4DE576D6185391830028650C /* ReceiptHTMLWriter.m */,
 				4D3B05A9183166CD005DB9B1 /* main.c */,
 				4D3B05A0183166CD005DB9B1 /* Supporting Files */,
+				4D3B05B51831FEF2005DB9B1 /* receipt.css */,
+				4DE576D4185366060028650C /* Localizable.strings */,
 			);
 			path = ReceiptQuickLook;
 			sourceTree = "<group>";
@@ -102,6 +132,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC694D81837E8E90042EE22 /* ByteArrayTransformer.h in Headers */,
+				4D3B05B918340F55005DB9B1 /* Receipt.h in Headers */,
+				4D3B05BD183503F3005DB9B1 /* HTMLWriter.h in Headers */,
+				4DE576D7185391830028650C /* ReceiptHTMLWriter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +192,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3B05B61831FEF2005DB9B1 /* receipt.css in Resources */,
+				4DE576D2185366060028650C /* Localizable.strings in Resources */,
 				4D3B05A4183166CD005DB9B1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,9 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D3B05A6183166CD005DB9B1 /* GenerateThumbnailForURL.c in Sources */,
-				4D3B05A8183166CD005DB9B1 /* GeneratePreviewForURL.c in Sources */,
+				4D3B05A6183166CD005DB9B1 /* GenerateThumbnailForURL.m in Sources */,
+				4DC694D91837E8E90042EE22 /* ByteArrayTransformer.m in Sources */,
+				4D3B05BA18340F55005DB9B1 /* Receipt.m in Sources */,
+				4D3B05BE183503F3005DB9B1 /* HTMLWriter.m in Sources */,
+				4D3B05A8183166CD005DB9B1 /* GeneratePreviewForURL.m in Sources */,
 				4D3B05AA183166CD005DB9B1 /* main.c in Sources */,
+				4DE576D8185391830028650C /* ReceiptHTMLWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +234,14 @@
 				4D3B05A3183166CD005DB9B1 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4DE576D4185366060028650C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DE576D3185366060028650C /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -270,12 +318,16 @@
 		4D3B05AF183166CD005DB9B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReceiptQuickLook/ReceiptQuickLook-Prefix.pch";
 				INFOPLIST_FILE = "ReceiptQuickLook/ReceiptQuickLook-Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = /usr/local/lib/libcrypto.a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Debug;
@@ -283,12 +335,16 @@
 		4D3B05B0183166CD005DB9B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReceiptQuickLook/ReceiptQuickLook-Prefix.pch";
 				INFOPLIST_FILE = "ReceiptQuickLook/ReceiptQuickLook-Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = /usr/local/lib/libcrypto.a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
@@ -312,6 +368,7 @@
 				4D3B05B0183166CD005DB9B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

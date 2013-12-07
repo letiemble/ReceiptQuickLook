@@ -15,3 +15,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
+#import <Foundation/Foundation.h>
+
+/**
+ * @brief The name of the value transformer.
+ */
+#define BYTE_ARRAY_TRANSFORMER  @"ByteArray"
+
+/**
+ * @brief A value transformer to convert a NSData instance into a human readable representation.
+ */
+@interface ByteArrayTransformer : NSValueTransformer
+
+@end

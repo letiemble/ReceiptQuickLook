@@ -1,0 +1,35 @@
+/*
+// Receipt QuickLook Plugin.
+// Copyright (c) 2013 Laurent Etiemble.
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+"Bundle Identifier [%@]" = "Bundle Identifier [%@]";
+"Bundle Version (Original) [%@]" = "Bundle Version (Original) [%@]";
+"Bundle Version [%@]" = "Bundle Version [%@]";
+"Cancellation Date [%@]" = "Cancellation Date [%@]";
+"Expiration Date [%@]" = "Expiration Date [%@]";
+"Expiration Date [%@]" = "Expiration Date [%@]";
+"InApp Purchases [%@]" = "InApp Purchases [%@]";
+"Item #%d" = "Item #%d";
+"Opaque Value [%@]" = "Opaque Value [%@]";
+"Product Identifier (Original) [%@]" = "Product Identifier (Original) [%@]";
+"Product Identifier [%@]" = "Product Identifier [%@]";
+"Purchase Date (Original) [%@]" = "Purchase Date (Original) [%@]";
+"Purchase Date [%@]" = "Purchase Date [%@]";
+"Quantity [%@]" = "Quantity [%@]";
+"Receipt Hash [%@]" = "Receipt Hash [%@]";
+"Transaction Identifier [%@]" = "Transaction Identifier [%@]";
+"Unknown Attribute [%@]" = "Unknown Attribute [%@]";
+"Web Order Line Item Identifier [%@]" = "Web Order Line Item Identifier [%@]";

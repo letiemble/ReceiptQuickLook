@@ -35,14 +35,6 @@
  */
 + (NSMutableDictionary *)dictionaryWithASN1:(const unsigned char *)ptr ofLength:(const unsigned char *)end;
 
-/**
- * @brief Decode a variable-length integer.
- * @param data A pointer to the buffer
- * @param length The length of the buffer
- * @return The integer value
- */
-+ (int)decodeInt:(const unsigned char *)data ofLength:(long) length;
-
 @end
 
 #pragma ----- Implementation -----
@@ -127,6 +119,7 @@ bail:
     int type;
     int xclass;
     long length;
+    ASN1_INTEGER *integer;
     
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
 
@@ -146,8 +139,8 @@ bail:
         }
         
         const unsigned char *seq_end = ptr + length;
-        int attr_type = 0;
-        //int attr_version = 0;
+        long attr_type = 0;
+        long attr_version = 0;
         
         // Parse the attribute type
         ASN1_get_object(&ptr, &length, &type, &xclass, end - ptr);
@@ -155,8 +148,9 @@ bail:
             NSLog(@"Failed to parse type");
             goto bail;
         }
-        attr_type = [[self class] decodeInt:ptr ofLength:length];
-        ptr += length;
+        integer = c2i_ASN1_INTEGER(NULL, &ptr, length);
+        attr_type = ASN1_INTEGER_get(integer);
+        ASN1_INTEGER_free(integer);
         
         // Parse the attribute version
         ASN1_get_object(&ptr, &length, &type, &xclass, end - ptr);
@@ -164,8 +158,9 @@ bail:
             NSLog(@"Failed to parse version");
             goto bail;
         }
-        //attr_version = [[self class] decodeInt:ptr ofLength:length];
-        ptr += length;
+        integer = c2i_ASN1_INTEGER(NULL, &ptr, length);
+        attr_version = ASN1_INTEGER_get(integer);
+        ASN1_INTEGER_free(integer);
         
         // Check the attribute value
         ASN1_get_object(&ptr, &length, &type, &xclass, end - ptr);
@@ -226,8 +221,11 @@ bail:
                 if (num_type != V_ASN1_INTEGER) {
                     goto bail;
                 }
-                int number = [[self class] decodeInt:num_ptr ofLength:num_length];
-                value = [NSNumber numberWithInt:number];
+                integer = c2i_ASN1_INTEGER(NULL, &num_ptr, num_length);
+                long number = ASN1_INTEGER_get(integer);
+                ASN1_INTEGER_free(integer);
+                
+                value = [NSNumber numberWithLong:number];
                 break;
             }
                 
@@ -266,17 +264,6 @@ bail:
     
 bail:
     return result;
-}
-
-+ (int)decodeInt:(const unsigned char *)data ofLength:(long) length {
-    const unsigned char *ptr = data;
-    size_t size = length;
-    int payload = 0;
-    do {
-        payload <<= 8;
-        payload += (uint8_t) *ptr++;
-    } while(--size > 0);
-    return payload;
 }
 
 @end

@@ -2,3 +2,5 @@ build
 Build
 ReceiptQuickLook.xcodeproj/project.xcworkspace
 ReceiptQuickLook.xcodeproj/xcuserdata
+DerivedData
+Pods

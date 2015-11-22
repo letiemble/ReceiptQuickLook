@@ -1,0 +1,19 @@
+PODS:
+  - OpenSSL-LET (1.0.2.d)
+
+DEPENDENCIES:
+  - OpenSSL-LET (from `https://github.com/letiemble/OpenSSL-LET.git`)
+
+EXTERNAL SOURCES:
+  OpenSSL-LET:
+    :git: https://github.com/letiemble/OpenSSL-LET.git
+
+CHECKOUT OPTIONS:
+  OpenSSL-LET:
+    :commit: 5c2c44fb73149691d53f28987fc0720e7d990f30
+    :git: https://github.com/letiemble/OpenSSL-LET.git
+
+SPEC CHECKSUMS:
+  OpenSSL-LET: 479a95a1f4c13f37bb4165a69c9bf6d68b487f0f
+
+COCOAPODS: 0.39.0

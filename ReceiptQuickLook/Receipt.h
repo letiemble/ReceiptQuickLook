@@ -1,6 +1,6 @@
 //
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013 Laurent Etiemble.
+// Copyright (c) 2013-2015 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -33,6 +33,8 @@ typedef enum _ReceiptAttributeType {
     ReceiptAttributeTypeOpaqueValue = 4,
     /** @brief Hash value */
     ReceiptAttributeTypeHash = 5,
+    /** @brief Creation date */
+    ReceiptAttributeTypeCreationDate = 12,
     /** @brief In-app purchase receipt */
     ReceiptAttributeTypeInAppPurchase = 17,
     /** @brief Original Application Version */

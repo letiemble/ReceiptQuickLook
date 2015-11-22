@@ -1,6 +1,6 @@
 //
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013 Laurent Etiemble.
+// Copyright (c) 2013-2015 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

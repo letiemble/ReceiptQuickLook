@@ -1,6 +1,6 @@
 /*
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013 Laurent Etiemble.
+// Copyright (c) 2013-2015 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 "Bundle Version (Original) [%@]" = "Bundle Version (Original) [%@]";
 "Bundle Version [%@]" = "Bundle Version [%@]";
 "Cancellation Date [%@]" = "Cancellation Date [%@]";
-"Expiration Date [%@]" = "Expiration Date [%@]";
+"Creation Date [%@]" = "Creation Date [%@]";
 "Expiration Date [%@]" = "Expiration Date [%@]";
 "InApp Purchases [%@]" = "InApp Purchases [%@]";
 "Item #%d" = "Item #%d";

@@ -17,16 +17,18 @@
 */
 body {
     font-family: Arial;
+    font-size: 14px;
 }
 
 table {
     border-collapse: collapse;
     border-spacing: 2;
+    font-size: 14px;
 }
 
 td {
     vertical-align: top;
-    padding: 0.25em;
+    padding: 0.2em;
 }
 
 td.label {

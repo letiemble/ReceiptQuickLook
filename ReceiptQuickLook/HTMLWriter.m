@@ -28,6 +28,8 @@
 
 - (void)writeData:(NSData *)object;
 
+- (void)writeDate:(NSData *)object;
+
 - (void)writeNumber:(NSNumber *)object;
 
 - (void)writeString:(NSString *)object;
@@ -205,6 +207,8 @@
         [self writeArray:object];
     } else if ([cls isSubclassOfClass:[NSData class]]) {
         [self writeData:object];
+    } else if ([cls isSubclassOfClass:[NSDate class]]) {
+        [self writeDate:object];
     } else if ([cls isSubclassOfClass:[NSNumber class]]) {
         [self writeNumber:object];
     } else if ([cls isSubclassOfClass:[NSString class]]) {
@@ -246,7 +250,7 @@
 - (void)writeArray:(NSArray *)object {
     [self startTable];
     [self startTableBody];
-    
+
     NSDictionary *itemAttributes = @{ @"class" : @"item" };
     
     for (NSUInteger i = 0; i < [object count]; i++) {
@@ -274,6 +278,16 @@
 - (void)writeData:(NSData *)object {
     NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:BYTE_ARRAY_TRANSFORMER];
     [self write:[transformer transformedValue:object]];
+}
+
+- (void)writeDate:(NSDate *)object {
+    static NSDateFormatter *formatter;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss'Z'"];
+    });
+    [self write:[formatter stringFromDate:object]];
 }
 
 - (void)writeNumber:(NSNumber *)object {

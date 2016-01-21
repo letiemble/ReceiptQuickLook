@@ -28,6 +28,20 @@
 - (void)parseData:(NSData *)data;
 
 /**
+ * @brief   Convert a stack of X.509 certificates into an array of dictionaries.
+ * @param   certs   The stack of certificates
+ * @return  An array of dictionaries
+ */
++ (NSArray *)extractCertificates:(struct stack_st_X509 *)certs;
+
+/**
+ * @brief   Convert an ASN1 encoded datetime into an object.
+ * @param   certs   The encoded time
+ * @return  A date instance
+ */
++ (NSDate *)dateWithASN1:(ASN1_TIME *)time;
+
+/**
  * @brief Extract a dictionary from an ASN.1 set.
  * @param ptr A pointer to the start of the buffer
  * @param end A pointer to the end of the buffer
@@ -48,6 +62,14 @@
         [self parseData:data];
     }
     return self;
+}
+
+- (NSArray *)certificates {
+    return self->_certificates;
+}
+
+- (NSArray *)signers {
+    return self->_signers;
 }
 
 - (NSDictionary *)dictionary {
@@ -102,17 +124,94 @@ bail:
     if (!PKCS7_type_is_data(pkcs7->d.sign->contents)) {
         goto bail;
     }
-    
+
+    struct stack_st_X509 *certs;
+
+    // Retrieve the embedded certificates contained in the receipt
+    certs = pkcs7->d.sign->cert;
+    self->_certificates = [[self class] extractCertificates:certs];
+
+    // Retrieve the signer certificates contained in the receipt
+    certs = PKCS7_get0_signers(pkcs7, NULL, 0);
+    self->_signers = [[self class] extractCertificates:certs];
+
     // Get a pointer to the data
     ASN1_OCTET_STRING *content = pkcs7->d.sign->contents->d.data;
     const unsigned char *ptr = content->data;
     const unsigned char *end = ptr + content->length;
     
     self->_dictionary = [[self class] dictionaryWithASN1:ptr ofLength:end];
-    
+
 bail:
     free(pkcs7);
     free(bio_p7);
+}
+
++ (NSArray *)extractCertificates:(struct stack_st_X509 *)certs {
+    int status, count, index;
+    char buffer[1024];
+    const EVP_MD *digest;
+    unsigned len;
+
+    NSMutableArray *certificates = [[NSMutableArray alloc] init];
+
+    count = sk_X509_num (certs);
+    for(index = 0; index < count; index++) {
+        X509 *cert = (X509 *) sk_X509_value (certs, index);
+
+        NSMutableDictionary *certificate = [NSMutableDictionary dictionary];
+        NSString *entry;
+        NSData *data;
+
+        X509_NAME_oneline(X509_get_subject_name(cert), buffer, 1024);
+        entry = [NSString stringWithUTF8String:buffer];
+        [certificate setValue:entry forKey:@"Subject"];
+        [entry release];
+
+        X509_NAME_oneline(X509_get_issuer_name(cert), buffer, 1024);
+        entry = [NSString stringWithUTF8String:buffer];
+        [certificate setValue:entry forKey:@"Issuer"];
+        [entry release];
+
+        X509_VAL *validity = cert->cert_info->validity;
+        [certificate setValue:[[self class] dateWithASN1:validity->notBefore] forKey:@"Not valid before"];
+        [certificate setValue:[[self class] dateWithASN1:validity->notAfter] forKey:@"Not valid after"];
+
+        digest = EVP_sha1();
+        status = X509_digest(cert, digest, (unsigned char*) buffer, &len);
+        if (status != 0 && len == 20) {
+            data = [[NSData alloc] initWithBytes:buffer length:20];
+            [certificate setValue:data forKey:@"SHA-1"];
+            [data release];
+        }
+
+        [certificates addObject:certificate];
+    }
+
+    return certificates;
+}
+
++ (NSDate *)dateWithASN1:(ASN1_TIME *)time {
+    static NSDateFormatter *utcFormatter;
+    static NSDateFormatter *generalizedFormatter;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        utcFormatter = [[NSDateFormatter alloc] init];
+        [utcFormatter setDateFormat:@"yyMMddHHmmss'Z'"];
+        generalizedFormatter = [[NSDateFormatter alloc] init];
+        [generalizedFormatter setDateFormat:@"yyyyMMddHHmmss'Z'"];
+    });
+
+    NSDate *date = nil;
+
+    if (time->type == V_ASN1_UTCTIME) {
+        date = [utcFormatter dateFromString:[NSString stringWithUTF8String:(const char *)time->data]];
+    }
+    if (time->type == V_ASN1_GENERALIZEDTIME) {
+        date = [generalizedFormatter dateFromString:[NSString stringWithUTF8String:(const char *)time->data]];
+    }
+
+    return date;
 }
 
 + (NSMutableDictionary *)dictionaryWithASN1:(const unsigned char *)ptr ofLength:(const unsigned char *)end {

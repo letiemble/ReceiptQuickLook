@@ -63,8 +63,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         
         // Parse the receipt
         Receipt *receipt = [[Receipt alloc] initWithData:data];
-        NSDictionary *dictionary = [receipt dictionary];
-        
+
         // Load a CSS stylesheet to insert it into the HTML
         NSBundle *bundle = [NSBundle bundleForClass:[HTMLWriter class]];
         NSURL *cssFile = [bundle URLForResource:@"receipt" withExtension:@"css"];
@@ -80,7 +79,22 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         [writer endElement:@"style"];
         [writer endHead];
         [writer startBody];
-        [writer writeObject:dictionary];
+
+        [writer startElement:@"h3"];
+        [writer write:@"Receipt"];
+        [writer endElement:@"h3"];
+        [writer writeObject:[receipt dictionary]];
+
+        [writer startElement:@"h3"];
+        [writer write:@"Certificates"];
+        [writer endElement:@"h3"];
+        [writer writeObject:[receipt certificates]];
+
+        [writer startElement:@"h3"];
+        [writer write:@"Signers"];
+        [writer endElement:@"h3"];
+        [writer writeObject:[receipt signers]];
+
         [writer endBody];
         [writer endDocument];
         

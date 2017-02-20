@@ -17,6 +17,8 @@ Once the QuickLook bundle is generated:
 
 Then, open a **Terminal** window and type `qlmanage -r` in order to rebuild the QuickLook plugin database.
 
+You may also install the plugin as a [cask](https://caskroom.github.io) via `brew cask install receiptquicklook`.
+
 ## How to use ?
 
 Like any other QuickLook plugin, go in the **Finder**, select a receipt file and press the `space` key.

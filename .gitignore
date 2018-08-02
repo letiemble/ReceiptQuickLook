@@ -1,6 +1,8 @@
 build
 Build
-ReceiptQuickLook.xcodeproj/project.xcworkspace
+Index
 ReceiptQuickLook.xcodeproj/xcuserdata
+ReceiptQuickLook.xcworkspace/xcuserdata/
 DerivedData
 Pods
+

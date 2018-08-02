@@ -1,6 +1,6 @@
 //
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013-2015 Laurent Etiemble.
+// Copyright (c) 2013-2018 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -32,38 +32,40 @@
                 return NSLocalizedString(@"Bundle Identifier [%@]", nil);
             case ReceiptAttributeTypeBundleVersion:
                 return NSLocalizedString(@"Bundle Version [%@]", nil);
-            case ReceiptAttributeTypeCreationDate:
-                return NSLocalizedString(@"Creation Date [%@]", nil);
-            case ReceiptAttributeTypeExpirationDate:
-                return NSLocalizedString(@"Expiration Date [%@]", nil);
-            case ReceiptAttributeTypeHash:
-                return NSLocalizedString(@"Receipt Hash [%@]", nil);
-            case ReceiptAttributeTypeInAppPurchase:
-                return NSLocalizedString(@"InApp Purchases [%@]", nil);
             case ReceiptAttributeTypeOpaqueValue:
                 return NSLocalizedString(@"Opaque Value [%@]", nil);
+            case ReceiptAttributeTypeHash:
+                return NSLocalizedString(@"Receipt Hash [%@]", nil);
+            case ReceiptAttributeTypeCreationDate:
+                return NSLocalizedString(@"Creation Date [%@]", nil);
+            case ReceiptAttributeTypeInAppPurchase:
+                return NSLocalizedString(@"InApp Purchases [%@]", nil);
             case ReceiptAttributeTypeOriginalApplicationVersion:
                 return NSLocalizedString(@"Bundle Version (Original) [%@]", nil);
-                
-            case InAppAttributeTypeCancellationDate:
-                return NSLocalizedString(@"Cancellation Date [%@]", nil);
-            case InAppAttributeTypeOriginalPurchaseDate:
-                return NSLocalizedString(@"Purchase Date (Original) [%@]", nil);
-            case InAppAttributeTypeOriginalTransactionIdentifer:
-                return NSLocalizedString(@"Product Identifier (Original) [%@]", nil);
-            case InAppAttributeTypeProductIdentifer:
-                return NSLocalizedString(@"Product Identifier [%@]", nil);
-            case InAppAttributeTypePurchaseDate:
-                return NSLocalizedString(@"Purchase Date [%@]", nil);
+            case ReceiptAttributeTypeExpirationDate:
+                return NSLocalizedString(@"Expiration Date [%@]", nil);
+
             case InAppAttributeTypeQuantity:
                 return NSLocalizedString(@"Quantity [%@]", nil);
-            case InAppAttributeTypeSubscriptionExpirationDate:
-                return NSLocalizedString(@"Expiration Date [%@]", nil);
+            case InAppAttributeTypeProductIdentifer:
+                return NSLocalizedString(@"Product Identifier [%@]", nil);
             case InAppAttributeTypeTransactionIdentifer:
                 return NSLocalizedString(@"Transaction Identifier [%@]", nil);
+            case InAppAttributeTypePurchaseDate:
+                return NSLocalizedString(@"Purchase Date [%@]", nil);
+            case InAppAttributeTypeOriginalTransactionIdentifer:
+                return NSLocalizedString(@"Product Identifier (Original) [%@]", nil);
+            case InAppAttributeTypeOriginalPurchaseDate:
+                return NSLocalizedString(@"Purchase Date (Original) [%@]", nil);
+            case InAppAttributeTypeSubscriptionExpirationDate:
+                return NSLocalizedString(@"Expiration Date [%@]", nil);
             case InAppAttributeTypeWebOrderLineItemId:
                 return NSLocalizedString(@"Web Order Line Item Identifier [%@]", nil);
-                
+            case InAppAttributeTypeCancellationDate:
+                return NSLocalizedString(@"Cancellation Date [%@]", nil);
+            case InAppAttributeTypeSubscriptionIntroductoryPricePeriod:
+                return NSLocalizedString(@"Subscription Introductory Price Period [%@]", nil);
+
             default:
                 return NSLocalizedString(@"Unknown Attribute [%@]", nil);
         }

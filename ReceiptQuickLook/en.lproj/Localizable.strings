@@ -1,6 +1,6 @@
 /*
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013-2015 Laurent Etiemble.
+// Copyright (c) 2013-2018 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@
 "Purchase Date [%@]" = "Purchase Date [%@]";
 "Quantity [%@]" = "Quantity [%@]";
 "Receipt Hash [%@]" = "Receipt Hash [%@]";
+"Subscription Introductory Price Period [%@]" = "Subscription Introductory Price Period [%@]";
 "Transaction Identifier [%@]" = "Transaction Identifier [%@]";
 "Unknown Attribute [%@]" = "Unknown Attribute [%@]";
 "Web Order Line Item Identifier [%@]" = "Web Order Line Item Identifier [%@]";

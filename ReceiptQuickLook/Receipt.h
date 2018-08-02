@@ -1,6 +1,6 @@
 //
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013-2015 Laurent Etiemble.
+// Copyright (c) 2013-2018 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -60,6 +60,8 @@ typedef enum _ReceiptAttributeType {
     InAppAttributeTypeWebOrderLineItemId = 1711,
     /** @brief Cancellation Date */
     InAppAttributeTypeCancellationDate = 1712,
+    /** @brief Subscription Introductory Price Period */
+    InAppAttributeTypeSubscriptionIntroductoryPricePeriod = 1719,
 } ReceiptAttributeType;
 
 /**

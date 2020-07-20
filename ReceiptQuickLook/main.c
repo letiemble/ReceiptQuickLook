@@ -1,6 +1,6 @@
 //
 // Receipt QuickLook Plugin.
-// Copyright (c) 2013-2018 Laurent Etiemble.
+// Copyright (c) 2013-2020 Laurent Etiemble.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -216,4 +216,3 @@ void *QuickLookGeneratorPluginFactory(CFAllocatorRef allocator,CFUUIDRef typeID)
     /* If the requested type is incorrect, return NULL. */
     return NULL;
 }
-
